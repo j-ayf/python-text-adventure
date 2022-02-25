@@ -3,26 +3,22 @@
     "apple": {
       "description": "An Apple.",
       "name": "Apple",
-      "price": "3",
-      "location": "starter_room"
+      "price": "3"
     },
     "money": {
       "description": "You can buy stuff with this.",
       "name": "Money",
-      "price": "1",
-      "location": "starter_room"
+      "price": "1"
     }
   },
   "Key": {
     "key_first_door": {
       "description": "Key for First Door",
-      "name": "Rusty Key",
-      "location": "None"
+      "name": "Rusty Key"
     },
     "key_starter_chest": {
       "description": "Key that looks like it fits in a chest",
-      "name": "Chest Key",
-      "location": "None"
+      "name": "Chest Key"
     }
   },
   "Door": {
@@ -59,7 +55,9 @@
       "west_wall": "starter_west",
       "east_wall": "starter_east",
       "description": "First Location that is entered.",
-      "name": "Starter Room"
+      "inv_description": "Behind the chest you see",
+      "name": "Starter Room",
+      "inventory": ["apple", "money", "key_starter_chest"]
     },
     "courtyard": {
       "north_wall": "courtyard_north",
@@ -67,7 +65,9 @@
       "west_wall": "courtyard_west",
       "east_wall": "courtyard_east",
       "description": "A vast courtyard with a fountain in the center.",
-      "name": "Courtyard"
+      "inv_description": "In the fountain and around the walls you see",
+      "name": "Courtyard",
+      "inventory": ["apple"]
     }
   },
   "Character": {

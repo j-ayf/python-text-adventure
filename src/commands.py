@@ -77,6 +77,11 @@ class Command:
             if self.is_correct_location(obj_to_look_at, player.location):
                 log.debug('Component found at current location!')
                 log.warning(obj_to_look_at.description)
+            elif player.location.inventory.is_item_in_inventory(obj_to_look_at):
+                log.debug('Component found at current location!')
+                log.warning(obj_to_look_at.description)
+            else:
+                log.warning(f'There is no {obj_to_look_at.name} here.')
         # if obj_to_look_at is None
         except AttributeError:
             log.error('No such thing here.')
@@ -189,10 +194,18 @@ class Command:
             # retrieve item object
             obj_to_take = self.get_obj_from_name(obj_to_take_name)
             # check if object's location is player's location
+            correct_location = False
             try:
-                if self.is_correct_location(obj_to_take, player.location):
+                # go through items in locations 'inventory'
+                for item_w_amount in player.location.inventory.inventory_list:
+                    if item_w_amount[0] == obj_to_take:
+                        correct_location = True
+                # check for correct location
+                if correct_location:
+                    # add to player's inventory
                     player.add_item(obj_to_take)
-                    obj_to_take.location = None
+                    # remove from location
+                    player.location.inventory.remove_item(obj_to_take)
                     log.warning(f'{obj_to_take.name} added to inventory.')
                 else:
                     log.warning(f'Nothing with that name can be taken from {player.location.name}.')

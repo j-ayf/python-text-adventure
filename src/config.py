@@ -9,7 +9,7 @@ import locations
 
 log = logging.getLogger(__name__)
 
-CURRENCY = 'Gold'
+CURRENCY = 'Gold Coin'
 
 
 def initialize(chosen_player_name):
@@ -109,10 +109,15 @@ def init_locations(location_list):
             if barrier.internal_name == location_list[location]['east_wall']:
                 east_wall = barrier
         desc = location_list[location]['description']
+        inv_desc = location_list[location]['inv_description']
         name = location_list[location]['name']
         internal_name = location
         # Create objects without assigning them to a variable
-        locations.Location(north_wall, south_wall, west_wall, east_wall, desc, name, internal_name)
+        new_location = locations.Location(north_wall, south_wall, west_wall, east_wall, desc, name, internal_name,
+                                          inv_desc)
+
+        fill_inventory(new_location.inventory, 'Item', location_list, location)
+        fill_inventory(new_location.inventory, 'Key', location_list, location)
 
 
 def init_characters(characters):
@@ -188,6 +193,9 @@ def set_locations(init_json):
     fields in JSON"""
     # loop through component types in '_all_components' list in components.py
     for component_type in components.Component.get_all_components():
+        # Items and Keys don't have a location
+        if component_type == 'Item' or component_type == 'Key':
+            continue
         # loop through components of component type
         for component in components.Component.get_all_components()[component_type]:
             # setting variable to make code more readable. Contains the path to the location internal_name field in

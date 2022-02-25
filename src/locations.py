@@ -83,15 +83,58 @@ class Location(Base):
     _all_locations = []
 
     def __init__(self, north_wall: Barrier, south_wall: Barrier, west_wall: Barrier, east_wall: Barrier,
-                 description=None, name=None, internal_name=None):
+                 description=None, name=None, internal_name=None, inv_description=None):
         super().__init__(description, name, internal_name)
         assert isinstance(north_wall, Barrier)  # if one is a Barrier, the others should be, too #goodEnough
         self.north_wall = north_wall
         self.south_wall = south_wall
         self.west_wall = west_wall
         self.east_wall = east_wall
+        self.inv_description = inv_description
+
+        from inventory import Inventory
+        self.inventory = Inventory()
 
         Location._all_locations.append(self)
+
+    @property
+    def description(self) -> str:
+        """Combines both description properties into one string"""
+        desc2 = f'{self.inv_description} '
+        inv = self.inventory.inventory_list
+        # go through items in the inventory and add them to a string
+        for i in range(len(inv)):
+            # check if item starts with a vowel
+            if inv[i][0].name.lower()[0] in 'aeiou':
+                desc2 += f'an '
+            else:
+                desc2 += f'a '
+            desc2 += f"'{inv[i][0].name}'"
+
+            if i-len(inv) == -2:
+                desc2 += f' and '
+            elif i-len(inv) == -1:
+                desc2 += f'.'
+            else:
+                desc2 += f', '
+
+        full_desc = f'{self._description} {desc2}'
+        return full_desc
+
+    @description.setter
+    def description(self, new_description):
+        """Sets new description for stuff"""
+        self._description = str(new_description)
+
+    @property
+    def inv_description(self):
+        """TODO: Comment function description2"""
+        return self._inv_description
+
+    @inv_description.setter
+    def inv_description(self, new_description2):
+        """TODO: Comment function description2"""
+        self._inv_description = new_description2
 
     def get_adjacent_location(self, wall_in_direction) -> 'Location':
         """Goes through the cls list-variable with all locations and checks which of those shares the passed
