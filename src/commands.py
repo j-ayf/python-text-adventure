@@ -48,6 +48,9 @@ class Command:
             log.warning(f'You are in a {player.location.name}. {player.location.description}')
         elif 'look' == self.command_list[0] and 'at' == self.command_list[1]:
             self.look(player)
+        elif 'look' == self.command_list[0] and ('north' == self.command_list[1] or 'south' == self.command_list[1] or
+                                                 'west' == self.command_list[1] or 'east' == self.command_list[1]):
+            self.look_cardinal(player)
         elif 'look' == self.command_list[0] and 'in' == self.command_list[1] or 'open' == self.command_list[0]:
             self.open(player)
         elif 'go' == self.command_list[0]:
@@ -67,8 +70,6 @@ class Command:
 
     def look(self, player):
         """Look at components or doors"""
-        # TODO: Maybe include barriers? Currently only components and doors. Barriers currently don't have names so
-        #  maybe look cardinal direction?.
         obj_to_look_at_name = self.get_obj_name(2, len(self.command_list))
         # retrieve item object
         obj_to_look_at = self.get_obj_from_name(obj_to_look_at_name)
@@ -85,6 +86,18 @@ class Command:
         # if obj_to_look_at is None
         except AttributeError:
             log.error('No such thing here.')
+
+    def look_cardinal(self, player):
+        """Look in cardinal direction and output Barrier's description"""
+        direction = self.command_list[1]
+        if direction == 'north':
+            log.warning(f'{player.location.north_wall.description}')
+        elif direction == 'south':
+            log.warning(f'{player.location.south_wall.description}')
+        elif direction == 'west':
+            log.warning(f'{player.location.west_wall.description}')
+        elif direction == 'east':
+            log.warning(f'{player.location.east_wall.description}')
 
     def open(self, player):
         """Shows Container's inventory and opens doors. Opening doors ist just cosmetic, doesn't need to be done."""
