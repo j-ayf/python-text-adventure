@@ -205,11 +205,9 @@ class Command:
         # get character object to talk to
         char_to_talk_name = self.get_obj_name(2, len(self.command_list))
         char_to_talk = self.get_obj_from_name(char_to_talk_name, 'Character')
-        print(char_to_talk)
         try:
             # check location
             if self.is_correct_location(char_to_talk, player.location):
-                print('is correct location')
                 # show character 'voice lines' to player
                 log.warning(f'{char_to_talk.text}')
                 time.sleep(0.1)
