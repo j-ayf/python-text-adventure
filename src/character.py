@@ -112,7 +112,7 @@ class Player(Character):
 
     def show_inventory(self, needs_price=False):
         """Prints the current amount of money the player has, then calls super class's method."""
-        print(f'Current money: {self.money} {config.CURRENCY}')
+        print(f'Current money: {self.money} {config.CURRENCY}s')
         super(Player, self).show_inventory(needs_price)
 
     def add_item(self, item_obj: Item, amount=1):
