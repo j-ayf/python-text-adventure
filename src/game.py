@@ -11,7 +11,7 @@ def start_text_adventure():
     time.sleep(0.1)
     player_name = input('Enter your Name: ')
     config.initialize(player_name)
-    log.warning(f'Welcome Message')
+    log.warning(config.welcome(player_name))
 
     # Game Loop
     while True:

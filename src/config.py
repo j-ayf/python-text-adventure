@@ -12,6 +12,11 @@ log = logging.getLogger(__name__)
 CURRENCY = 'Gold Coin'
 
 
+def welcome(player_name):
+    """TODO: Comment function welcome"""
+    return f"Welcome to this very simple Text Adventure, {player_name}! Find you way out of the Mansion to finish it!"
+
+
 def initialize(chosen_player_name):
     """Loads all components from JSON and creates game objects"""
     f = open("init.json", "r")
@@ -71,9 +76,10 @@ def init_doors(doors):
     """Goes through all doors defined in JSON and creates objects from them."""
     for door in doors:
         this_key = None
-        for key in components.Component.get_all_components()['Key']:
-            if key.internal_name == doors[door]['key']:
-                this_key = key
+        if doors[door]['key'] is not None:
+            for key in components.Component.get_all_components()['Key']:
+                if key.internal_name == doors[door]['key']:
+                    this_key = key
         desc = doors[door]['description']
         name = doors[door]['name']
         internal_name = door
