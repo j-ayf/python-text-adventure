@@ -1,0 +1,101 @@
+{
+  "Item": {
+    "apple": {
+      "description": "An Apple.",
+      "name": "Apple",
+      "price": "3",
+      "location": "starter_room"
+    },
+    "money": {
+      "description": "You can buy stuff with this.",
+      "name": "Money",
+      "price": "1",
+      "location": "starter_room"
+    }
+  },
+  "Key": {
+    "key_first_door": {
+      "description": "Key for First Door",
+      "name": "Rusty Key",
+      "location": "None"
+    },
+    "key_starter_chest": {
+      "description": "Key that looks like it fits in a chest",
+      "name": "Chest Key",
+      "location": "None"
+    }
+  },
+  "Door": {
+    "first_door": {
+      "key": "key_first_door",
+      "name": "Rusty Door",
+      "description": "A very old, rusty door."
+    }
+  },
+  "Barrier": {
+    "starter_south": {
+      "description": "An old, impenetrable stone wall"
+    },
+    "starter_west": {
+      "description": "An old, impenetrable stone wall"
+    },
+    "starter_east": {
+      "description": "An old, impenetrable stone wall"
+    },
+    "courtyard_north": {
+      "description": "An old, impenetrable stone wall"
+    },
+    "courtyard_west": {
+      "description": "An old, impenetrable stone wall"
+    },
+    "courtyard_east": {
+      "description": "An old, impenetrable stone wall"
+    }
+  },
+  "Location": {
+    "starter_room": {
+      "north_wall": "first_door",
+      "south_wall": "starter_south",
+      "west_wall": "starter_west",
+      "east_wall": "starter_east",
+      "description": "First Location that is entered.",
+      "name": "Starter Room"
+    },
+    "courtyard": {
+      "north_wall": "courtyard_north",
+      "south_wall": "first_door",
+      "west_wall": "courtyard_west",
+      "east_wall": "courtyard_east",
+      "description": "A vast courtyard with a fountain in the center.",
+      "name": "Courtyard"
+    }
+  },
+  "Character": {
+    "merchant_henry": {
+      "description": "A friendly looking Merchant. You can trade with him.",
+      "name": "Henry the Merchant",
+      "text": "Hello, I'm Henry the Merchant. can I interest you in some of my wares?",
+      "inventory": ["apple(3)"],
+      "location": "starter_room"
+    }
+  },
+  "Player": {
+    "player": {
+      "description": "This is the player",
+      "name": "Janik",
+      "inventory": ["key_starter_chest"],
+      "location": "starter_room",
+      "money": "0"
+    }
+  },
+  "Container": {
+    "starter_chest": {
+      "key": "key_starter_chest",
+      "description": "Old chest that might contain something for the door.",
+      "name": "Chest",
+      "inventory": ["key_first_door"],
+      "location": "starter_room"
+    }
+  }
+}
+
