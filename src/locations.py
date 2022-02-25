@@ -100,25 +100,27 @@ class Location(Base):
     @property
     def description(self) -> str:
         """Combines both description properties into one string"""
-        desc2 = f'{self.inv_description} '
         inv = self.inventory.inventory_list
-        # go through items in the inventory and add them to a string
-        for i in range(len(inv)):
-            # check if item starts with a vowel
-            if inv[i][0].name.lower()[0] in 'aeiou':
-                desc2 += f'an '
-            else:
-                desc2 += f'a '
-            desc2 += f"'{inv[i][0].name}'"
+        if len(inv) > 0:
+            inv_desc = f'{self.inv_description} '
+            # go through items in the inventory and add them to a string
+            for i in range(len(inv)):
+                # check if item starts with a vowel
+                if inv[i][0].name.lower()[0] in 'aeiou':
+                    inv_desc += f'an '
+                else:
+                    inv_desc += f'a '
+                inv_desc += f"'{inv[i][0].name}'"
 
-            if i-len(inv) == -2:
-                desc2 += f' and '
-            elif i-len(inv) == -1:
-                desc2 += f'.'
-            else:
-                desc2 += f', '
-
-        full_desc = f'{self._description} {desc2}'
+                if i-len(inv) == -2:
+                    inv_desc += f' and '
+                elif i-len(inv) == -1:
+                    inv_desc += f'.'
+                else:
+                    inv_desc += f', '
+        else:
+            inv_desc = f'There are no items lying around in this location.'
+        full_desc = f'{self._description} {inv_desc}'
         return full_desc
 
     @description.setter
@@ -128,12 +130,12 @@ class Location(Base):
 
     @property
     def inv_description(self):
-        """TODO: Comment function description2"""
+        """Return description of second description. Start of the string that will show location's inventory."""
         return self._inv_description
 
     @inv_description.setter
     def inv_description(self, new_description2):
-        """TODO: Comment function description2"""
+        """Sets description of second description. Start of the string that will show location's inventory."""
         self._inv_description = new_description2
 
     def get_adjacent_location(self, wall_in_direction) -> 'Location':
