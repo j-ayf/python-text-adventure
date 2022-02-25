@@ -155,9 +155,6 @@ class Command:
 
     def take(self, player):
         """Take items out of a container or directly from a location"""
-        # TODO: location's description needs to change when items have been taken. Maybe have additional description
-        #  text variable that is not shown when item is picked up. Might limit it to one item per location, so
-        #  definitely not ideal :/
         # take stuff from container
         if 'from' in self.command_list:
             index_from = self.command_list.index('from')
