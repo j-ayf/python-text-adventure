@@ -108,7 +108,7 @@ class Player(Character):
         elif wall_in_direction is None:
             pass
         else:
-            log.warning('You cannot go here!')
+            log.warning('You cannot go there!')
 
     def show_inventory(self, needs_price=False):
         """Prints the current amount of money the player has, then calls super class's method."""
