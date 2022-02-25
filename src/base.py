@@ -50,5 +50,5 @@ class Base:
             self._internal_name = str(new_name)
 
     def __repr__(self):
-        """TODO: Comment function __repr__(self):"""
+        """Returns the object's String."""
         return f'Name: {self.name}, Internal Name: {self.internal_name}'

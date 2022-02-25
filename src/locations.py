@@ -41,7 +41,7 @@ class Lock:
 
     @is_unlocked.setter
     def is_unlocked(self, unlocked_bool):
-        """TODO: Comment function is_unlocked"""
+        """Sets new unlocked state"""
         self._is_unlocked = unlocked_bool
 
     def unlock(self, key):

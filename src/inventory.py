@@ -166,6 +166,6 @@ class Container(Inventory, Component):
         self.lock.unlock(key)
     
     def show_inventory(self, needs_price=False, component=None):
-        """TODO: Comment function show_inventory(self, needs_price=False, component=None):"""
+        """Sets container as the component for name-calling, then calls parent class's method."""
         component = self
         super(Container, self).show_inventory(needs_price, component)

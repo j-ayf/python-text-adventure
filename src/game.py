@@ -8,23 +8,25 @@ log = logging.getLogger(__name__)
 
 def start_text_adventure():
     log.debug('Game function started.')
+    # player_name = input('Enter your Name: ') TODO: activate custom naming
+    # config.initialize(player_name)
     config.initialize('Janik')
     log.warning(f'Welcome Message')
 
     # Game Loop
     while True:
-        time.sleep(0.1)
+        time.sleep(0.1)  # Needed to make sure the Enter Command message is shown after log messages.
         command = enter_command()
         command.analyze()
 
 
 def enter_command():
-    """TODO: Currently returns the list of words within the command"""
+    """Returns the command object"""
     try:
         command = Command(input('Enter Command: '))
         return command
     except KeyboardInterrupt:
-        exit()
+        exit('Game stopped by Keyboard Interrupt')
 
 
 if __name__ == '__main__':

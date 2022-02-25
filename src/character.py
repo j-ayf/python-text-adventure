@@ -110,10 +110,10 @@ class Player(Character):
         else:
             log.warning('You cannot go here!')
 
-    def show_inventory(self):
+    def show_inventory(self, needs_price=False):
         """Prints the current amount of money the player has, then calls super class's method."""
         print(f'Current money: {self.money} {config.CURRENCY}')
-        super(Player, self).show_inventory()
+        super(Player, self).show_inventory(needs_price)
 
     def add_item(self, item_obj: Item, amount=1):
         """This method simply forwards to the Inventory object's method of the same name. Takes Item object and amount
