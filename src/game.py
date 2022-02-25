@@ -8,9 +8,9 @@ log = logging.getLogger(__name__)
 
 def start_text_adventure():
     log.debug('Game function started.')
-    # player_name = input('Enter your Name: ') TODO: activate custom naming
-    # config.initialize(player_name)
-    config.initialize('Janik')
+    time.sleep(0.1)
+    player_name = input('Enter your Name: ')
+    config.initialize(player_name)
     log.warning(f'Welcome Message')
 
     # Game Loop
