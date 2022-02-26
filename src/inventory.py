@@ -163,7 +163,7 @@ class Container(Inventory, Component):
     def unlock(self, key):
         """Simply forwards to the 'Lock' class' method of the same name. Takes a key as parameter."""
         log.debug('Attempting to unlock Container.')
-        self.lock.unlock(key)
+        self.lock.unlock(key, self)
     
     def show_inventory(self, needs_price=False, component=None):
         """Sets container as the component for name-calling, then calls parent class's method."""

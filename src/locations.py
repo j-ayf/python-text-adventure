@@ -44,7 +44,7 @@ class Lock:
         """Sets new unlocked state"""
         self._is_unlocked = unlocked_bool
 
-    def unlock(self, key):
+    def unlock(self, key, locked_obj):
         """Attempts to unlock a lock with a specific key."""
         from components import Key
         assert isinstance(key, Key)
@@ -55,7 +55,7 @@ class Lock:
             # Check if the correct key is being used
             if self.key is key:
                 self.is_unlocked = True
-                log.info(f'{type(self).__name__} has been unlocked.')
+                log.info(f'{locked_obj.name} has been unlocked with {self.key.name}.')
             else:
                 log.warning(f'Wrong Key. {type(self).__name__} stays locked.')
 
@@ -74,7 +74,7 @@ class Door(Barrier):
     def unlock(self, key):
         """Simply forwards to the 'Lock' class' method of the same name. Takes a key as parameter."""
         log.debug('Attempting to unlock door.')
-        self.lock.unlock(key)
+        self.lock.unlock(key, self)
 
 
 class Location(Base):
