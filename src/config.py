@@ -67,9 +67,10 @@ def init_keys(keys):
     for key in keys:
         desc = keys[key]['description']
         name = keys[key]['name']
+        price = keys[key]['price']
         internal_name = key
         # Create objects without assigning them to a variable
-        components.Key(desc, name, internal_name)
+        components.Key(desc, name, internal_name, price)
 
 
 def init_doors(doors):

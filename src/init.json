@@ -3,7 +3,12 @@
     "apple": {
       "description": "An Apple.",
       "name": "Apple",
-      "price": "3"
+      "price": "15"
+    },
+    "sword": {
+      "description": "A mighty Sword King Arthur would be proud of",
+      "name": "Sword",
+      "price": "100"
     },
     "money": {
       "description": "You can buy stuff with this.",
@@ -12,62 +17,254 @@
     }
   },
   "Key": {
-    "key_first_door": {
-      "description": "Key for First Door",
-      "name": "Rusty Key"
+    "co_south_d_key": {
+      "description": "Key that opens a 'Cell Door'",
+      "name": "Cell Door Key",
+      "price": "1"
     },
-    "key_starter_chest": {
-      "description": "Key that looks like it fits in a chest",
-      "name": "Chest Key"
+    "key_wooden_chest": {
+      "description": "Key that looks like it fits in a 'Wooden Chest'",
+      "name": "Wooden Key",
+      "price": "1"
+    },
+    "co_west_d_key": {
+      "description": "Key that opens door to the garden 'Shed'",
+      "name": "Shed Key",
+      "price": "1"
+    },
+    "ba_north_d_key": {
+      "description": "Key that opens the door at the bottom of the staircase",
+      "name": "Basement Key",
+      "price": "1"
+    },
+    "ha_west_d_key": {
+      "description": "Key that unlocks a door in the 'Hall'",
+      "name": "Hall Key",
+      "price": "1"
+    },
+    "be_west_d_key": {
+      "description": "Key that unlocks the 'Bedroom' door",
+      "name": "Bedroom Key",
+      "price": "1"
+    },
+    "be_north_d_key": {
+      "description": "Mysterious Key. What will it open?",
+      "name": "Mystery Key",
+      "price": "1"
     }
   },
   "Door": {
-    "first_door": {
-      "key": "key_first_door",
-      "name": "Rusty Door",
-      "description": "A very old, rusty door."
+    "co_south_d": {
+      "key": "co_south_d_key",
+      "name": "Cell Door",
+      "description": "A 'Cell Door' made of sturdy iron bars. Impossible to open without the correct key."
+    },
+    "co_west_d": {
+      "key": "co_west_d_key",
+      "name": "",
+      "description": ""
+    },
+    "co_north_d": {
+      "key": "",
+      "name": "",
+      "description": ""
+    },
+    "ba_north_d": {
+      "key": "ba_north_d_key",
+      "name": "",
+      "description": ""
+    },
+    "ha_west_d": {
+      "key": "ha_west_d_key",
+      "name": "",
+      "description": ""
+    },
+    "ha_east_d": {
+      "key": "",
+      "name": "",
+      "description": ""
+    },
+    "fo_north_d": {
+      "key": "",
+      "name": "",
+      "description": ""
+    },
+    "be_west_d": {
+      "key": "be_west_d_key",
+      "name": "",
+      "description": ""
+    },
+    "be_north_d": {
+      "key": "be_north_d_key",
+      "name": "Bedroom Window",
+      "description": "You see a 'Bedroom Window' with sharp broken glass shards. Taking a closer look you see a tiny lock on the handle"
     }
   },
   "Barrier": {
-    "starter_south": {
-      "description": "An old, impenetrable stone wall"
+    "ch_south": {
+      "description": ""
     },
-    "starter_west": {
-      "description": "An old, impenetrable stone wall"
+    "ch_west": {
+      "description": ""
     },
-    "starter_east": {
-      "description": "An old, impenetrable stone wall"
+    "ch_east": {
+      "description": ""
     },
-    "courtyard_north": {
-      "description": "An old, impenetrable stone wall"
+    "sh_south": {
+      "description": ""
     },
-    "courtyard_west": {
-      "description": "An old, impenetrable stone wall"
+    "ba_south": {
+      "description": ""
     },
-    "courtyard_east": {
-      "description": "An old, impenetrable stone wall"
+    "sh_west": {
+      "description": ""
+    },
+    "co_east": {
+      "description": ""
+    },
+    "ba_west": {
+      "description": ""
+    },
+    "ba_east": {
+      "description": ""
+    },
+    "sh_north": {
+      "description": ""
+    },
+    "fo_south": {
+      "description": ""
+    },
+    "fo_west": {
+      "description": ""
+    },
+    "st_east": {
+      "description": ""
+    },
+    "ha_north": {
+      "description": ""
+    },
+    "st_north": {
+      "description": ""
+    },
+    "bt_west": {
+      "description": ""
+    },
+    "be_east": {
+      "description": ""
+    },
+    "bt_north": {
+      "description": ""
+    },
+    "fr_west": {
+      "description": ""
+    },
+    "fr_east": {
+      "description": ""
+    },
+    "fr_north": {
+      "description": ""
     }
   },
   "Location": {
-    "starter_room": {
-      "north_wall": "first_door",
-      "south_wall": "starter_south",
-      "west_wall": "starter_west",
-      "east_wall": "starter_east",
+    "chamber": {
+      "north_wall": "co_south_d",
+      "south_wall": "ch_south",
+      "west_wall": "ch_west",
+      "east_wall": "ch_east",
       "description": "First Location that is entered.",
       "inv_description": "Behind the chest you see",
-      "name": "Starter Room",
-      "inventory": ["apple", "money", "key_starter_chest"]
+      "name": "Small Chamber",
+      "inventory": ["key_wooden_chest"]
     },
     "courtyard": {
-      "north_wall": "courtyard_north",
-      "south_wall": "first_door",
-      "west_wall": "courtyard_west",
-      "east_wall": "courtyard_east",
-      "description": "A vast courtyard with a fountain in the center.",
-      "inv_description": "In the fountain and around the walls you see",
+      "north_wall": "co_north_d",
+      "south_wall": "co_south_d",
+      "west_wall": "co_west_d",
+      "east_wall": "co_east",
+      "description": "",
+      "inv_description": "",
       "name": "Courtyard",
-      "inventory": ["apple"]
+      "inventory": []
+    },
+    "shed": {
+      "north_wall": "sh_north",
+      "south_wall": "sh_south",
+      "west_wall": "sh_west",
+      "east_wall": "co_west_d",
+      "description": "",
+      "inv_description": "",
+      "name": "Shed",
+      "inventory": []
+    },
+    "basement": {
+      "north_wall": "ba_north_d",
+      "south_wall": "ba_south",
+      "west_wall": "ba_west",
+      "east_wall": "ba_east",
+      "description": "",
+      "inv_description": "",
+      "name": "Basement",
+      "inventory": []
+    },
+    "foyer": {
+      "north_wall": "fo_north_d",
+      "south_wall": "fo_south",
+      "west_wall": "fo_west",
+      "east_wall": "ha_west_d",
+      "description": "",
+      "inv_description": "",
+      "name": "Foyer",
+      "inventory": []
+    },
+    "hall": {
+      "north_wall": "ha_north",
+      "south_wall": "co_north_d",
+      "west_wall": "ha_west_d",
+      "east_wall": "ha_east_d",
+      "description": "",
+      "inv_description": "",
+      "name": "Hall",
+      "inventory": []
+    },
+    "staircase": {
+      "north_wall": "st_north",
+      "south_wall": "ba_north_d",
+      "west_wall": "ha_east_d",
+      "east_wall": "st_east",
+      "description": "",
+      "inv_description": "",
+      "name": "Staircase",
+      "inventory": []
+    },
+    "bathroom": {
+      "north_wall": "bt_north",
+      "south_wall": "fo_north_d",
+      "west_wall": "bt_west",
+      "east_wall": "be_west_d",
+      "description": "",
+      "inv_description": "",
+      "name": "Bathroom",
+      "inventory": []
+    },
+    "bedroom": {
+      "north_wall": "be_north_d",
+      "south_wall": "ha_north",
+      "west_wall": "be_west_d",
+      "east_wall": "be_east",
+      "description": "",
+      "inv_description": "",
+      "name": "Bedroom",
+      "inventory": []
+    },
+    "freedom": {
+      "north_wall": "fr_north",
+      "south_wall": "be_north_d",
+      "west_wall": "fr_west",
+      "east_wall": "fr_east",
+      "description": "You are Free! Congratulations, you finished the game :)",
+      "inv_description": "",
+      "name": "Freedom",
+      "inventory": []
     }
   },
   "Character": {
@@ -75,26 +272,54 @@
       "description": "A friendly looking Merchant. You can trade with him.",
       "name": "Henry the Merchant",
       "text": "Hello, I'm Henry the Merchant. can I interest you in some of my wares?",
-      "inventory": ["apple(3)"],
-      "location": "starter_room"
+      "inventory": ["co_west_d_key", "be_north_d_key"],
+      "location": "chamber"
     }
   },
   "Player": {
     "player": {
       "description": "This is the player",
       "name": "Janik",
-      "inventory": ["key_starter_chest"],
-      "location": "starter_room",
+      "inventory": [],
+      "location": "chamber",
       "money": "0"
     }
   },
   "Container": {
-    "starter_chest": {
-      "key": "key_starter_chest",
+    "wooden_chest": {
+      "key": "key_wooden_chest",
+      "description": "Old 'wooden chest' that might contain something for the door.",
+      "name": "Wooden Chest",
+      "inventory": ["co_south_d_key", "money"],
+      "location": "chamber"
+    },
+    "fountain": {
+      "key": "",
+      "description": "A beautiful water 'fountain' glistening in the moonlight. Is there something inside?",
+      "name": "Fountain",
+      "inventory": ["money(3)"],
+      "location": "courtyard"
+    },
+    "cabinet": {
+      "key": "",
+      "description": "Wooden 'Cabinet' hanging on the wall, probably used to store garden utensils.",
+      "name": "Cabinet",
+      "inventory": [],
+      "location": "shed"
+    },
+    "flush_tank": {
+      "key": "",
       "description": "Old chest that might contain something for the door.",
-      "name": "Chest",
-      "inventory": ["key_first_door"],
-      "location": "starter_room"
+      "name": "Flush Tank",
+      "inventory": ["ba_north_d_key", "be_north_d_key", "apple(7)"],
+      "location": "bathroom"
+    },
+    "toilet": {
+      "key": "",
+      "description": "Old chest that might contain something for the door.",
+      "name": "Toilet",
+      "inventory": [],
+      "location": "bathroom"
     }
   }
 }
