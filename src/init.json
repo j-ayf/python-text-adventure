@@ -1,7 +1,7 @@
 {
   "Item": {
     "apple": {
-      "description": "An Apple.",
+      "description": "An Apple. The reason snakes lost their legs",
       "name": "Apple",
       "price": "15"
     },
@@ -18,7 +18,7 @@
   },
   "Key": {
     "co_south_d_key": {
-      "description": "Key that opens a 'Cell Door'",
+      "description": "Key that opens the 'Cell Door'",
       "name": "Cell Key",
       "price": "1"
     },
@@ -62,107 +62,107 @@
     "co_west_d": {
       "key": "co_west_d_key",
       "name": "Shed Door",
-      "description": ""
+      "description": "'Shed Door' made of wood. There must be a key to unlock it somewhere."
     },
     "co_north_d": {
-      "key": "Large, Wooden Door",
-      "name": "",
-      "description": ""
+      "key": "",
+      "name": "Large Wooden Door",
+      "description": "A giant wooden door that leads into the mansion."
     },
     "ba_north_d": {
       "key": "ba_north_d_key",
       "name": "Basement Door",
-      "description": ""
+      "description": "Behind this 'Basement Door' the cellar room is located (duh)."
     },
     "ha_west_d": {
       "key": "ha_west_d_key",
       "name": "Metal Door",
-      "description": ""
+      "description": "A solid 'Metal Door'."
     },
     "ha_east_d": {
       "key": "",
       "name": "Arch",
-      "description": ""
+      "description": "An arch that connects the Hall with the Staircase."
     },
     "fo_north_d": {
       "key": "",
       "name": "Bathroom Door",
-      "description": ""
+      "description": "A regular 'Bathroom Door' leading to the place where one can do one's special business."
     },
     "be_west_d": {
       "key": "be_west_d_key",
       "name": "Bedroom Door",
-      "description": ""
+      "description": "'Bedroom Door' that connects the bathroom directly to the bedroom."
     },
     "be_north_d": {
       "key": "be_north_d_key",
       "name": "Bedroom Window",
-      "description": "You see a 'Bedroom Window' with sharp broken glass shards. Taking a closer look you see a tiny lock on the handle"
+      "description": "You see a 'Bedroom Window' with sharp broken glass shards. Taking a closer look you see a tiny lock on the handle."
     }
   },
   "Barrier": {
     "ch_south": {
-      "description": ""
+      "description": "Thick Iron Bars prevent anything but mosquitoes from coming through."
     },
     "ch_west": {
-      "description": ""
+      "description": "Thick Iron Bars prevent anything but mosquitoes from coming through."
     },
     "ch_east": {
-      "description": ""
+      "description": "Thick Iron Bars prevent anything but mosquitoes from coming through."
     },
     "sh_south": {
-      "description": ""
+      "description": "A wooden wall."
     },
     "ba_south": {
-      "description": ""
+      "description": "An old mossy stone wall."
     },
     "sh_west": {
-      "description": ""
+      "description": "A wooden wall with a workbench in front of it. A bunch of gardening tools are lying around on it."
     },
     "co_east": {
-      "description": ""
+      "description": "A high wall with a lot of windows giving an idea of the size of the mansion."
     },
     "ba_west": {
-      "description": ""
+      "description": "An old mossy stone wall. A 'Safe' is built into the wall."
     },
     "ba_east": {
-      "description": ""
+      "description": "An old mossy stone wall."
     },
     "sh_north": {
-      "description": ""
+      "description": "A wooden wall with a cabinet hanging on it."
     },
     "fo_south": {
-      "description": ""
+      "description": "A beautiful wood panelled wall."
     },
     "fo_west": {
-      "description": ""
+      "description": "You can see the entrance to the mansion, but the big door has a heavy lock on it that you will not be able to break."
     },
     "st_east": {
-      "description": ""
+      "description": "A wall with a window in it. Outside you see the outside you are desperately trying to reach."
     },
     "ha_north": {
-      "description": ""
+      "description": "A grand staircase leading to the upper floors of the building, however it is completely blocked by debris. You won't be able to go up there."
     },
     "st_north": {
-      "description": ""
+      "description": "A wall with a window in it. Outside you see the outside you are desperately trying to reach."
     },
     "bt_west": {
-      "description": ""
+      "description": "A tiled wall with the 'Toilet' in front of a window showing you a beautiful sunny day."
     },
     "be_east": {
-      "description": ""
+      "description": "A big bed is standing on this side of the room with a 'Nightstand' right next to it."
     },
     "bt_north": {
-      "description": ""
+      "description": "A tiled wall with a bathtub in front of it."
     },
     "fr_west": {
-      "description": ""
+      "description": "Vast open fields allow you to escape from this place."
     },
     "fr_east": {
-      "description": ""
+      "description": "Vast open fields allow you to escape from this place."
     },
     "fr_north": {
-      "description": ""
+      "description": "Vast open fields allow you to escape from this place."
     }
   },
   "Location": {
@@ -323,7 +323,7 @@
     },
     "toilet": {
       "key": "",
-      "description": "A disgusting looking 'Toilet' that looks exactly like the place someone would try to flush down cocaine, when the police comes knocking.",
+      "description": "A disgusting looking 'Toilet' that looks exactly like the place someone would try to flush down cocaine, when the police comes knocking. Attached to it is a regular 'Flush Tank'.",
       "name": "Toilet",
       "inventory": ["money"],
       "location": "bathroom"
@@ -337,4 +337,3 @@
     }
   }
 }
-

@@ -13,8 +13,9 @@ CURRENCY = 'Gold Coin'
 
 
 def welcome(player_name):
-    """TODO: Comment function welcome"""
-    return f"Welcome to this very simple Text Adventure, {player_name}! Find you way out of the Mansion to finish it!"
+    """Welcome message shown to the player."""
+    return f"Welcome to this very simple Text Adventure, {player_name}! You are locked in a prison cell in a big " \
+           f"mansion and have to find your way out to freedom to finish it. Good Luck!"
 
 
 def initialize(chosen_player_name):
