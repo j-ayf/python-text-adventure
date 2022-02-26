@@ -19,7 +19,7 @@
   "Key": {
     "co_south_d_key": {
       "description": "Key that opens a 'Cell Door'",
-      "name": "Cell Door Key",
+      "name": "Cell Key",
       "price": "1"
     },
     "key_wooden_chest": {
@@ -30,7 +30,7 @@
     "co_west_d_key": {
       "description": "Key that opens door to the garden 'Shed'",
       "name": "Shed Key",
-      "price": "1"
+      "price": "5"
     },
     "ba_north_d_key": {
       "description": "Key that opens the door at the bottom of the staircase",
@@ -50,7 +50,7 @@
     "be_north_d_key": {
       "description": "Mysterious Key. What will it open?",
       "name": "Mystery Key",
-      "price": "1"
+      "price": "6"
     }
   },
   "Door": {
@@ -61,37 +61,37 @@
     },
     "co_west_d": {
       "key": "co_west_d_key",
-      "name": "",
+      "name": "Shed Door",
       "description": ""
     },
     "co_north_d": {
-      "key": "",
+      "key": "Large, Wooden Door",
       "name": "",
       "description": ""
     },
     "ba_north_d": {
       "key": "ba_north_d_key",
-      "name": "",
+      "name": "Basement Door",
       "description": ""
     },
     "ha_west_d": {
       "key": "ha_west_d_key",
-      "name": "",
+      "name": "Metal Door",
       "description": ""
     },
     "ha_east_d": {
       "key": "",
-      "name": "",
+      "name": "Arch",
       "description": ""
     },
     "fo_north_d": {
       "key": "",
-      "name": "",
+      "name": "Bathroom Door",
       "description": ""
     },
     "be_west_d": {
       "key": "be_west_d_key",
-      "name": "",
+      "name": "Bedroom Door",
       "description": ""
     },
     "be_north_d": {
@@ -174,7 +174,7 @@
       "description": "First Location that is entered.",
       "inv_description": "Behind the chest you see",
       "name": "Small Chamber",
-      "inventory": ["key_wooden_chest"]
+      "inventory": ["key_wooden_chest", "money"]
     },
     "courtyard": {
       "north_wall": "co_north_d",
@@ -231,10 +231,10 @@
       "south_wall": "ba_north_d",
       "west_wall": "ha_east_d",
       "east_wall": "st_east",
-      "description": "",
-      "inv_description": "",
+      "description": "A staircase that leads down into what seems to be the basement.",
+      "inv_description": "Under the stairs you see",
       "name": "Staircase",
-      "inventory": []
+      "inventory": ["money"]
     },
     "bathroom": {
       "north_wall": "bt_north",
@@ -244,7 +244,7 @@
       "description": "",
       "inv_description": "",
       "name": "Bathroom",
-      "inventory": []
+      "inventory": ["money"]
     },
     "bedroom": {
       "north_wall": "be_north_d",
@@ -273,7 +273,7 @@
       "name": "Henry the Merchant",
       "text": "Hello, I'm Henry the Merchant. can I interest you in some of my wares?",
       "inventory": ["co_west_d_key", "be_north_d_key"],
-      "location": "chamber"
+      "location": "courtyard"
     }
   },
   "Player": {
@@ -297,29 +297,43 @@
       "key": "",
       "description": "A beautiful water 'fountain' glistening in the moonlight. Is there something inside?",
       "name": "Fountain",
-      "inventory": ["money(3)"],
+      "inventory": ["money(2)"],
       "location": "courtyard"
     },
     "cabinet": {
       "key": "",
       "description": "Wooden 'Cabinet' hanging on the wall, probably used to store garden utensils.",
       "name": "Cabinet",
-      "inventory": [],
+      "inventory": ["ha_west_d_key", "money(2)"],
+      "location": "shed"
+    },
+    "safe": {
+      "key": "",
+      "description": "Metal 'Safe' built into the wall.",
+      "name": "Safe",
+      "inventory": ["be_west_d_key", "money"],
       "location": "shed"
     },
     "flush_tank": {
       "key": "",
-      "description": "Old chest that might contain something for the door.",
+      "description": "A regular looking 'Flush Tank' attached to the 'Toilet'. The lid seems to be a little lose.",
       "name": "Flush Tank",
-      "inventory": ["ba_north_d_key", "be_north_d_key", "apple(7)"],
+      "inventory": ["ba_north_d_key", "be_north_d_key"],
       "location": "bathroom"
     },
     "toilet": {
       "key": "",
-      "description": "Old chest that might contain something for the door.",
+      "description": "A disgusting looking 'Toilet' that looks exactly like the place someone would try to flush down cocaine, when the police comes knocking.",
       "name": "Toilet",
-      "inventory": [],
+      "inventory": ["money"],
       "location": "bathroom"
+    },
+    "nightstand": {
+      "key": "",
+      "description": "Wooden 'Nightstand' with a small lamp on top and a closed drawer.",
+      "name": "Nightstand",
+      "inventory": ["money"],
+      "location": "bedroom"
     }
   }
 }
