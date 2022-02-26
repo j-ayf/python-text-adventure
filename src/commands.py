@@ -135,7 +135,6 @@ class Command:
         """Go in cardinal direction."""
         direction = self.command_list[1]
         player.go_direction(direction)
-        log.warning(f'You are in a {player.location.name}. {player.location.description}')
 
     def unlock(self, player):
         """Unlock doors and containers"""
