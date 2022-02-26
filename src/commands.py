@@ -75,14 +75,23 @@ class Command:
         obj_to_look_at = self.get_obj_from_name(obj_to_look_at_name)
         # Checks if object is in the same location as the player and outputs description.
         try:
+            # Check if it is a door (only possible option)
             if self.is_correct_location(obj_to_look_at, player.location):
                 log.debug('Component found at current location!')
-                log.warning(obj_to_look_at.description)
+                message = obj_to_look_at.description
+            # if it is not a door
             elif player.location.inventory.is_item_in_inventory(obj_to_look_at):
                 log.debug('Component found at current location!')
-                log.warning(obj_to_look_at.description)
+                message = obj_to_look_at.description
             else:
-                log.warning(f'There is no {obj_to_look_at.name} here.')
+                message = f'There is no {obj_to_look_at.name} here.'
+            # if it is a door or container, add locked state
+            if isinstance(obj_to_look_at, locations.Door) or isinstance(obj_to_look_at, inventory.Container):
+                if obj_to_look_at.lock.is_unlocked:
+                    message += ' It is unlocked.'
+                else:
+                    message += ' It is locked.'
+            log.warning(message)
         # if obj_to_look_at is None
         except AttributeError:
             log.error('No such thing here.')
@@ -91,13 +100,25 @@ class Command:
         """Look in cardinal direction and output Barrier's description"""
         direction = self.command_list[1]
         if direction == 'north':
-            log.warning(f'{player.location.north_wall.description}')
+            wall_in_direction = player.location.north_wall
+            message = player.location.north_wall.description
         elif direction == 'south':
-            log.warning(f'{player.location.south_wall.description}')
+            wall_in_direction = player.location.south_wall
+            message = player.location.south_wall.description
         elif direction == 'west':
-            log.warning(f'{player.location.west_wall.description}')
-        elif direction == 'east':
-            log.warning(f'{player.location.east_wall.description}')
+            wall_in_direction = player.location.west_wall
+            message = player.location.west_wall.description
+        else:
+            wall_in_direction = player.location.east_wall
+            message = player.location.east_wall.description
+
+        if isinstance(wall_in_direction, locations.Door):
+            if wall_in_direction.is_unlocked():
+                message += ' It is unlocked.'
+            else:
+                message += ' It is locked.'
+
+        log.warning(message)
 
     def open(self, player):
         """Shows Container's inventory and opens doors. Opening doors ist just cosmetic, doesn't need to be done."""
