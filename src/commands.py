@@ -38,7 +38,7 @@ class Command:
         player = components.Component.get_all_components()['Player'][0]
 
         # necessary to prevent index out of bound errors when only giving one word as command
-        if len(self.command_list) < 2 and not ('exit' == self.command_list[0] or 'stop' == self.command_list[0]):
+        if len(self.command_list) < 2 and not ('exit' in self.command_list or 'stop' in self.command_list):
             log.error(f'Commands need to have at least 2 words!')
             return
 
@@ -75,6 +75,7 @@ class Command:
         obj_to_look_at = self.get_obj_from_name(obj_to_look_at_name)
         # Checks if object is in the same location as the player and outputs description.
         try:
+            message = ''
             # Check if it is a door (only possible option)
             if self.is_correct_location(obj_to_look_at, player.location):
                 log.debug('Component found at current location!')
@@ -84,7 +85,8 @@ class Command:
                 log.debug('Component found at current location!')
                 message = obj_to_look_at.description
             else:
-                message = f'There is no {obj_to_look_at.name} here.'
+                log.warning(f'There is no {obj_to_look_at.name} here.')
+                return
             # if it is a door or container, add locked state
             if isinstance(obj_to_look_at, locations.Door) or isinstance(obj_to_look_at, inventory.Container):
                 if obj_to_look_at.lock.is_unlocked:
