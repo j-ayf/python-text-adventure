@@ -67,7 +67,7 @@
     "co_north_d": {
       "key": "",
       "name": "Large Wooden Door",
-      "description": "A giant wooden door that leads into the mansion."
+      "description": "A giant wooden door that connects the main building with the courtyard."
     },
     "ba_north_d": {
       "key": "ba_north_d_key",
@@ -149,6 +149,9 @@
     "bt_west": {
       "description": "A tiled wall with the 'Toilet' in front of a window showing you a beautiful sunny day."
     },
+    "be_south": {
+      "description": "A blank wall with a wardrobe full of clothes."
+    },
     "be_east": {
       "description": "A big bed is standing on this side of the room with a 'Nightstand' right next to it."
     },
@@ -221,8 +224,8 @@
       "south_wall": "co_north_d",
       "west_wall": "ha_west_d",
       "east_wall": "ha_east_d",
-      "description": "",
-      "inv_description": "A big room with a giant staircase to the north leading to the upper floors. However, it seems that debris has blocked it off. To the west is a large 'Metal Door', south is the Large Wooden Door leading to the courtyard and in the east seems to be another staircase leading to the basement.",
+      "description": "A big room with a giant staircase to the north leading to the upper floors. However, it seems that debris has blocked it off. To the west is a large 'Metal Door', south is the Large Wooden Door leading to the courtyard and in the east seems to be another staircase leading to the basement.",
+      "inv_description": "",
       "name": "Hall",
       "inventory": []
     },
@@ -231,7 +234,7 @@
       "south_wall": "ba_north_d",
       "west_wall": "ha_east_d",
       "east_wall": "st_east",
-      "description": "A staircase that leads down into what seems to be the 'Basement Door'.",
+      "description": "A staircase that leads down into what seems to be the 'Basement Door' in the south.",
       "inv_description": "Upon closer inspection under the stairs you find",
       "name": "Staircase",
       "inventory": ["money"]
@@ -248,7 +251,7 @@
     },
     "bedroom": {
       "north_wall": "be_north_d",
-      "south_wall": "ha_north",
+      "south_wall": "be_south",
       "west_wall": "be_west_d",
       "east_wall": "be_east",
       "description": "A expansive room with a bed on the east side with a little 'Nightstand' right next to it. To the north is the 'Bedroom Window'. West is the door to the bathroom.",
@@ -288,7 +291,7 @@
   "Container": {
     "wooden_chest": {
       "key": "key_wooden_chest",
-      "description": "Old 'wooden chest' that might contain something for the door.",
+      "description": "Old 'Wooden Chest', presumably containing what little amenities a prisoner is allowed.",
       "name": "Wooden Chest",
       "inventory": ["co_south_d_key", "money"],
       "location": "small_cell"
@@ -312,13 +315,13 @@
       "description": "Metal 'Safe' built into the wall.",
       "name": "Safe",
       "inventory": ["be_west_d_key", "money"],
-      "location": "shed"
+      "location": "basement"
     },
     "flush_tank": {
       "key": "",
       "description": "A regular looking 'Flush Tank' attached to the 'Toilet'. The lid seems to be a little lose.",
       "name": "Flush Tank",
-      "inventory": ["ba_north_d_key", "be_north_d_key"],
+      "inventory": ["ba_north_d_key"],
       "location": "bathroom"
     },
     "toilet": {

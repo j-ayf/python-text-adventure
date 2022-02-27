@@ -103,6 +103,7 @@ class Player(Character):
                 log.debug(f'Current Location: {self.location.internal_name}; Going through Door')
                 self.location = self.location.get_adjacent_location(wall_in_direction)
                 log.debug(f'New Location: {self.location.internal_name}')
+                log.warning(f'You go through {wall_in_direction.name}')
             else:
                 log.warning(f"'{wall_in_direction.name}' is locked.")
         elif wall_in_direction is None:

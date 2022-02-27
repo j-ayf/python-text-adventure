@@ -119,7 +119,7 @@ class Location(Base):
                 else:
                     inv_desc += f', '
         else:
-            inv_desc = f'There are no items lying around in this location.'
+            inv_desc = f'There are no other items lying around in this location.'
         full_desc = f'{self._description} {inv_desc}'
         return full_desc
 
