@@ -224,7 +224,7 @@
       "south_wall": "co_north_d",
       "west_wall": "ha_west_d",
       "east_wall": "ha_east_d",
-      "description": "A big room with a giant staircase to the north leading to the upper floors. However, it seems that debris has blocked it off. To the west is a large 'Metal Door', south is the Large Wooden Door leading to the courtyard and in the east seems to be another staircase leading to the basement.",
+      "description": "A big room with a giant staircase to the north leading to the upper floors. However, it seems that debris has blocked it off. To the west is a large 'Metal Door', south is the Large Wooden Door leading to the courtyard and in the east through a big 'Arch' seems to be another staircase leading to the basement.",
       "inv_description": "",
       "name": "Hall",
       "inventory": []
@@ -234,7 +234,7 @@
       "south_wall": "ba_north_d",
       "west_wall": "ha_east_d",
       "east_wall": "st_east",
-      "description": "A staircase that leads down into what seems to be the 'Basement Door' in the south.",
+      "description": "A staircase that leads down into what seems to be the 'Basement Door' in the south. West lies the Hall.",
       "inv_description": "Upon closer inspection under the stairs you find",
       "name": "Staircase",
       "inventory": ["money"]

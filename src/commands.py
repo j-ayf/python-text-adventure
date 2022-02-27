@@ -75,7 +75,6 @@ class Command:
         obj_to_look_at = self.get_obj_from_name(obj_to_look_at_name)
         # Checks if object is in the same location as the player and outputs description.
         try:
-            message = ''
             # Check if it is a door (only possible option)
             if self.is_correct_location(obj_to_look_at, player.location):
                 log.debug('Component found at current location!')
