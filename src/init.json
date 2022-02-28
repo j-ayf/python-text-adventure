@@ -10,6 +10,11 @@
       "name": "Sword",
       "price": "100"
     },
+    "trophy": {
+      "description": "A great Trophy showing that you won the game.",
+      "name": "Trophy",
+      "price": "100"
+    },
     "money": {
       "description": "You can buy stuff with this.",
       "name": "Money",
@@ -265,9 +270,9 @@
       "west_wall": "fr_west",
       "east_wall": "fr_east",
       "description": "You are Free! Congratulations, you finished the game :)",
-      "inv_description": "",
-      "name": "Freedom",
-      "inventory": []
+      "inv_description": "You get",
+      "name": "Garden without Fences",
+      "inventory": ["trophy"]
     }
   },
   "Character": {
