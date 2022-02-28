@@ -27,3 +27,4 @@ Run game.py in src/ directly (as `py -m src.game`) for debugging mode.
 - This game is very primitive and does not include all the commands you might know from other established text adventures
 - Some commands are very strict, so if you want to take an item out of a chest you _have to_ include the `from` keyword (see above)
 - All objects of interest are shown by the 'quotation marks', so if you are ever stuck, make sure to `look at` all of them
+- You can make your own game by changing the init.json file accordingly
