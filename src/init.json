@@ -275,7 +275,7 @@
       "description": "A friendly looking man. It seems like he has things for sale that might interest you.",
       "name": "Henry",
       "text": "Hello, I'm Henry the Merchant. can I interest you in some of my wares?",
-      "inventory": ["co_west_d_key", "be_north_d_key"],
+      "inventory": ["co_west_d_key", "be_north_d_key", "apple(6)", "sword"],
       "location": "courtyard"
     }
   },
