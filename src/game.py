@@ -23,7 +23,7 @@ def start_text_adventure():
 def enter_command():
     """Returns the command object"""
     try:
-        command = Command(input('Enter Command: '))
+        command = Command(input('\nEnter Command: '))
         return command
     except KeyboardInterrupt:
         exit('Game stopped by Keyboard Interrupt')
