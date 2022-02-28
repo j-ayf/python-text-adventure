@@ -1,10 +1,10 @@
 import logging
 import re
 
-import components
-import config
-import inventory
-import locations
+from . import components
+from . import config
+from . import inventory
+from . import locations
 import time
 
 log = logging.getLogger(__name__)

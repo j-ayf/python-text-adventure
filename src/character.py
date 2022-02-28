@@ -1,7 +1,7 @@
-import config
-import inventory
-from components import Component, Item
-from locations import Door
+from . import config
+from . import inventory
+from .components import Component, Item
+from .locations import Door
 import logging
 
 log = logging.getLogger(__name__)

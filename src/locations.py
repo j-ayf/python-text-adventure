@@ -1,5 +1,5 @@
 import logging
-from base import Base
+from .base import Base
 
 log = logging.getLogger(__name__)
 
@@ -23,7 +23,7 @@ class Lock:
 
     def __init__(self, key=None):
         """Constructor for Lock. Initialize with the Key-Item needed to unlock."""
-        from components import Key
+        from .components import Key
         if key is not None:
             assert isinstance(key, Key)
 
@@ -46,7 +46,7 @@ class Lock:
 
     def unlock(self, key, locked_obj):
         """Attempts to unlock a lock with a specific key."""
-        from components import Key
+        from .components import Key
         assert isinstance(key, Key)
 
         if self.is_unlocked:
@@ -92,7 +92,7 @@ class Location(Base):
         self.east_wall = east_wall
         self.inv_description = inv_description
 
-        from inventory import Inventory
+        from .inventory import Inventory
         self.inventory = Inventory()
 
         Location._all_locations.append(self)

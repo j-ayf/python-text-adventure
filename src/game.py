@@ -1,5 +1,5 @@
-from commands import Command
-import config
+from .commands import Command
+from . import config
 import logging
 import time
 
@@ -30,8 +30,6 @@ def enter_command():
 
 
 if __name__ == '__main__':
-    # used for dev
+    # logging used for dev
     logging.basicConfig(level=logging.DEBUG, format='%(asctime)s -- %(levelname)s -- %(module)s -- %(message)s')
-    # used for playing as messages to the Player
-    # logging.basicConfig(level=logging.INFO, format='%(message)s')
     start_text_adventure()

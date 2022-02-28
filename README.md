@@ -1,5 +1,9 @@
 #Python Text Adventure
 
+Run textAdventure.py to play the game.
+
+Run game.py in src/ directly (as `py -m src.game`) for debugging mode.
+
 ###Possible Commands:
 - show inventory
 - look around

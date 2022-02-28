@@ -1,6 +1,6 @@
-from components import Item, Component
-from locations import Lock
-import config
+from .components import Item, Component
+from .locations import Lock
+from . import config
 import logging
 
 log = logging.getLogger(__name__)

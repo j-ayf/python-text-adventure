@@ -2,10 +2,10 @@
 import json
 import logging
 
-import character
-import components
-import inventory
-import locations
+from . import character
+from . import components
+from . import inventory
+from . import locations
 
 log = logging.getLogger(__name__)
 
@@ -20,7 +20,7 @@ def welcome(player_name):
 
 def initialize(chosen_player_name):
     """Loads all components from JSON and creates game objects"""
-    f = open("init.json", "r")
+    f = open("src/init.json", "r")
     f = f.read()
     init_json = json.loads(f)
 
